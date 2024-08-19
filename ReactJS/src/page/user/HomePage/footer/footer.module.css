@@ -1,0 +1,54 @@
+.footer {
+  background-color: rgb(16, 16, 16);
+}
+.container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  .rowItem {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 25%;
+    padding: 20px 50px;
+  }
+}
+.footerAbout {
+  color: rgb(244, 244, 244);
+  margin-bottom: 20px;
+}
+.footerAboutList {
+  color: aliceblue;
+  li {
+    list-style: none;
+    margin-bottom: 20px;
+    span {
+      color: red;
+    }
+  }
+}
+.contactInform {
+  color: rgb(244, 244, 244);
+  margin-bottom: 20px;
+}
+.contactList {
+  color: aliceblue;
+  li {
+    list-style: none;
+    margin-bottom: 20px;
+    span {
+      color: red;
+    }
+  }
+}
+
+.policy {
+  color: rgb(244, 244, 244);
+  margin-bottom: 20px;
+}
+
+.policyList {
+  color: aliceblue;
+  li {
+    margin-bottom: 20px;
+  }
+}

@@ -1,0 +1,54 @@
+.mainTopHeader {
+  background-color: rgb(212, 212, 241);
+  font-size: 18px;
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.mainTopHeader:hover {
+  cursor: pointer;
+}
+.headerLogo {
+  width: 30px;
+  height: 30px;
+}
+.menuPhone {
+  display: flex;
+  justify-content: center;
+  span {
+    margin-left: 5px;
+    color: red;
+  }
+}
+.menuChanel {
+  ul {
+    display: flex;
+    column-gap: 8px;
+    justify-content: center;
+    align-items: center;
+    /* ẩn dấu chấm thẻ li */
+    list-style: none;
+    a {
+      display: inline-block;
+      color: rgb(111, 113, 113);
+      width: 15px;
+    }
+  }
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menuLogin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  span {
+    margin-left: 2px;
+    margin-bottom: 5px;
+  }
+}

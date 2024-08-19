@@ -3,11 +3,7 @@ import axios from "axios";
 import "./App.css";
 import HomePage from "./page/user/HomePage/masterlayout";
 function App() {
-  return (
-    <>
-      <HomePage />
-    </>
-  );
+  return <></>;
 }
 
 export default App;

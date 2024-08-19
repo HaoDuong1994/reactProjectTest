@@ -1,4 +1,11 @@
+import HomeCaracel from "./home/HomeCarasoul/homeCarasel";
+import HomeProduct from "./home/HomeProduct/homepProduct";
 function HomePage() {
-  return <div>Hello homepage</div>;
+  return (
+    <>
+      <HomeCaracel />
+      <HomeProduct />
+    </>
+  );
 }
 export default HomePage;

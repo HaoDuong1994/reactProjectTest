@@ -1,7 +1,7 @@
 import { memo } from "react";
-import Header from "./header";
+import Header from "./Header/header";
 import Body from "./homepage";
-import Footer from "./footer";
+import Footer from "./footer/footer";
 function MasterlayOut({ children, ...props }) {
   return (
     <>
