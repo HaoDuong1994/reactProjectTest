@@ -1,0 +1,36 @@
+.container {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  padding: 0 45px;
+  justify-content: space-around;
+  box-sizing: border-box;
+  .serviceItem {
+    display: flex;
+    width: 300px;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #d7d4d4f1;
+    border-radius: 15px;
+    transition: all 0.5s ease-in-out;
+    .serviceIcon {
+      width: 36px;
+      height: 36px;
+    }
+    .serviceContent {
+      display: flex;
+      flex-direction: column;
+      color: #e95211;
+      margin-left: 8px;
+      font-size: 1rem;
+      p {
+        margin-bottom: 0px;
+      }
+    }
+  }
+  .serviceItem:hover {
+    padding: 10px;
+    cursor: pointer;
+  }
+}

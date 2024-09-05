@@ -2,8 +2,9 @@ import MasterLayout from "./page/user/HomePage/masterlayout";
 import HomePage from "./page/user/HomePage/homepage";
 import router from "./utils/Router";
 import ProfilePage from "./page/user/profilePage/profilePage";
-import { BrowserRouter as Router } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
+import ProductPage from "./page/user/ProductPage/ProductPage";
+import ProductDetails from "./page/user/ProductDetailPage/productDetail";
 const renderRouter = () => {
   const userRouter = [
     {
@@ -13,6 +14,14 @@ const renderRouter = () => {
     {
       path: router.USER.profilePage,
       component: <ProfilePage />,
+    },
+    {
+      path: router.USER.productPage,
+      component: <ProductPage />,
+    },
+    {
+      path: "/product/:id",
+      component: <ProductDetails />,
     },
   ];
   return (

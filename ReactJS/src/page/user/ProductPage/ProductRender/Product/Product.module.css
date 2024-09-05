@@ -1,0 +1,60 @@
+.ProductContainer {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  .itemList {
+    display: grid;
+    height: 80%;
+    margin-left: 2%;
+    grid-template-columns: 20% 20% 20% 20%;
+    column-gap: 5%;
+    row-gap: 5%;
+    grid-auto-rows: 45%;
+    .itemContainer {
+      display: flex;
+      flex-direction: column;
+      img {
+        height: 70%;
+      }
+      .itemName {
+        height: 10%;
+        text-align: center;
+      }
+      .itemPrice {
+        height: 10%;
+        text-align: center;
+        color: #e61256;
+        font-weight: 700;
+      }
+      .itemButton {
+        height: 10%;
+        a {
+          text-decoration: none;
+          color: rgb(44, 44, 44);
+        }
+        a:hover {
+          color: chocolate;
+        }
+      }
+    }
+    .itemContainer:hover {
+      cursor: pointer;
+    }
+  }
+  .buttonList {
+    display: flex;
+    margin-left: 2%;
+    justify-content: center;
+    .buttonItem {
+      text-align: center;
+      border: 1px solid chocolate;
+      width: 30px;
+      margin-left: 3px;
+    }
+    .buttonItem:hover {
+      background-color: #e95211;
+      cursor: pointer;
+    }
+  }
+}

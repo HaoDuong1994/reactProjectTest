@@ -1,0 +1,5 @@
+.container {
+  background-color: darksalmon;
+  display: flex;
+  padding: 0 2%;
+}
