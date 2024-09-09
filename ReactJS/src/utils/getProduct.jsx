@@ -11,4 +11,11 @@ const getAllProduct = async (productType, page) => {
   }
 };
 
+const getProductDetail = async (id) => {
+  const response = await axios.get(
+    `http://localhost:3000/product/product-detail?productID=${id}`
+  );
+  return response.data;
+};
 export default getAllProduct;
+export { getProductDetail };

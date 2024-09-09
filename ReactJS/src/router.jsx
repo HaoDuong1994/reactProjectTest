@@ -4,6 +4,7 @@ import router from "./utils/Router";
 import ProfilePage from "./page/user/profilePage/profilePage";
 import { Routes, Route } from "react-router-dom";
 import ProductPage from "./page/user/ProductPage/ProductPage";
+import ProductInCartPage from "./Component/productInCart/productInCart";
 import ProductDetails from "./page/user/ProductDetailPage/productDetail";
 const renderRouter = () => {
   const userRouter = [
@@ -22,6 +23,10 @@ const renderRouter = () => {
     {
       path: "/product/:id",
       component: <ProductDetails />,
+    },
+    {
+      path: router.USER.productInCartPage,
+      component: <ProductInCartPage />,
     },
   ];
   return (

@@ -1,6 +1,9 @@
 import styles from "./Content.module.css";
-import { useState } from "react";
-function ContentRender() {
+import { useState, useContext } from "react";
+import { Context } from "../../../../utils/Context";
+function ContentRender(props) {
+  const { handleCart } = useContext(Context);
+  const { data } = props;
   const [quantity, setQuantity] = useState(0);
   const handleIncrease = () => {
     setQuantity(quantity + 1);
@@ -11,21 +14,17 @@ function ContentRender() {
   return (
     <div className={styles.container}>
       <div className={styles.contentWrapper}>
-        <div className={styles.name}>Racket Lining Windstorm 72</div>
+        <div className={styles.name}>{data ? data.productName : ""}</div>
         <div>
           Product code:
-          <span className={styles.color}> SK_11111</span>
+          <span className={styles.color}>{data ? data.productCode : ""}</span>
         </div>
-        <div>
-          Vợt cầu lông Lining Windstorm 72 new chính hãng vừa được cho ra mắt
-          vào thời điểm gần đây với thiết kế thiên về thủ phản tạt cầu nhanh
-          trên lưới.
-        </div>
+        <div>{data ? data.description : ""}</div>
         <div>
           Type:
-          <span className={styles.color}> Racket</span>
+          <span className={styles.color}> {data ? data.productType : ""}</span>
         </div>
-        <div className={styles.price}>900.000</div>
+        <div className={styles.price}>{data ? data.buyPrice : 0}</div>
         <div className={styles.quantity}>
           <div onClick={handleDecrease} className={styles.button}>
             <span>-</span>
@@ -36,11 +35,24 @@ function ContentRender() {
           </div>
         </div>
         <div className={styles.buttonOrder}>
-          <button className={styles.addCard}>Add to card</button>
+          <button
+            onClick={() => {
+              handleCart(data.productCode);
+            }}
+            className={styles.addCard}>
+            Add to card
+          </button>
           <button className={styles.buy}>Buy</button>
         </div>
       </div>
-      <div className={styles.shopSystemWrapper}>Shop system render</div>
+      <div className={styles.shopSystemWrapper}>
+        <div className={styles.name}>Lining series</div>
+        <img src="https://shopvnb.com/uploads/dong_san_pham/lightning-2.jpg" />
+        <img src="https://shopvnb.com/uploads/dong_san_pham/highcarbon.jpg" />
+        <img src="https://shopvnb.com/uploads/dong_san_pham/windstorm-2.jpg" />
+        <img src="https://shopvnb.com/uploads/dong_san_pham/Turbo%20Charging-5.jpg" />
+        <img src="https://shopvnb.com/uploads/dong_san_pham/3D-Calibar-3.jpg" />
+      </div>
     </div>
   );
 }

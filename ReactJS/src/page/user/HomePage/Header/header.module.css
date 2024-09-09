@@ -23,13 +23,21 @@
   }
 }
 .menuChanel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   ul {
     display: flex;
     column-gap: 8px;
     justify-content: center;
+    margin-bottom: 0px;
     align-items: center;
     /* ẩn dấu chấm thẻ li */
     list-style: none;
+    .cartWrapepper {
+      position: relative;
+      width: 200px;
+    }
     a {
       display: inline-block;
       color: rgb(111, 113, 113);
@@ -51,4 +59,13 @@
     margin-left: 2px;
     margin-bottom: 5px;
   }
+}
+
+.itemCart {
+  position: absolute;
+  margin-bottom: 40px;
+  margin-right: 40px;
+  font-size: medium;
+  color: red;
+  font-weight: 700;
 }

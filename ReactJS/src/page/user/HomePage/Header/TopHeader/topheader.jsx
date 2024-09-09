@@ -1,16 +1,14 @@
 import styles from "../../Header/header.module.css";
 import { Link } from "react-router-dom";
-import { useState } from "react";
-import {
-  AiOutlineFacebook,
-  AiOutlineInstagram,
-  AiOutlineUser,
-} from "react-icons/ai";
+import { useState, useContext } from "react";
+import { AiOutlineFacebook, AiOutlineInstagram } from "react-icons/ai";
 import { FaSquareYoutube, FaHeadphonesSimple } from "react-icons/fa6";
-
+import { AiOutlineShoppingCart } from "react-icons/ai";
+import { Context } from "../../../../../utils/Context";
 function TopHeader(props) {
+  const value = useContext(Context);
+  const productCart = value.productInCart;
   const { style } = props;
-
   return (
     <div className={style.mainTopHeader}>
       <div className={style.headerLogo}>
@@ -38,14 +36,15 @@ function TopHeader(props) {
               <FaSquareYoutube />
             </Link>
           </li>
-          <li className={style.menuLogin}>
-            <Link>
-              <AiOutlineUser />
+          <li className={styles.cartWrapepper}>
+            <Link to={"http://localhost:5173/item-in-cart"}>
+              <AiOutlineShoppingCart />
             </Link>
-            <span className={style.size}>User login</span>
+            <span className={styles.itemCart}>{productCart.length}</span>
           </li>
         </ul>
       </div>
+      <div>Login</div>
     </div>
   );
 }

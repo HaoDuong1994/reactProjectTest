@@ -3,6 +3,7 @@ const router = {
     homePage: "/",
     profilePage: "/profile",
     productPage: "/product",
+    productInCartPage: "/item-in-cart",
   },
   ADMIN: {
     homePage: "/",

@@ -3,15 +3,21 @@ import { useState, useEffect } from "react";
 import styles from "./productDetail.module.css";
 import ImgRender from "./ImgRender/Img";
 import ContentRender from "./ContentRender/ContentRender";
+import { getProductDetail } from "../../../utils/getProduct";
 function ProductDetails() {
-  useEffect(() => {}, []);
-  console.log(useParams());
+  const [product, setProduct] = useState(null);
   const { id } = useParams();
-  console.log(id);
+  useEffect(() => {
+    const getProduct = async () => {
+      const data = await getProductDetail(id);
+      setProduct(data.data);
+    };
+    getProduct();
+  }, [id]);
   return (
     <div className={styles.container}>
-      <ImgRender />
-      <ContentRender />
+      <ImgRender data={product} />
+      <ContentRender data={product} />
     </div>
   );
 }
