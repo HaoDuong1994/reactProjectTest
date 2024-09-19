@@ -1,6 +1,7 @@
 import styles from "../../Header/header.module.css";
 import { Link } from "react-router-dom";
 import { useState, useContext } from "react";
+import { IoPerson } from "react-icons/io5";
 import { AiOutlineFacebook, AiOutlineInstagram } from "react-icons/ai";
 import { FaSquareYoutube, FaHeadphonesSimple } from "react-icons/fa6";
 import { AiOutlineShoppingCart } from "react-icons/ai";
@@ -44,7 +45,16 @@ function TopHeader(props) {
           </li>
         </ul>
       </div>
-      <div>Login</div>
+      <div className={styles.loginMenu}>
+        <IoPerson />
+        <div className={styles.dropdown}>
+          <div className={styles.triangle}></div>
+          <div className={styles.content}>
+            <Link>Log In</Link>
+            <Link to={"http://localhost:5173/user/sign-up"}>Sign up</Link>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

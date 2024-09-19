@@ -5,20 +5,25 @@ function Product(props) {
   const handleButtonClick = props.method;
   const productList = data.data;
   const button = ["1", "2", "3", "4", "5", "6", "7"];
+  const numberFormat = new Intl.NumberFormat("en-us");
+
   return (
     <div className={styles.ProductContainer}>
       <div className={styles.itemList}>
         {productList
-          ? productList.map((product) => {
+          ? productList.map((product, index) => {
               return (
-                <div className={styles.itemContainer}>
+                <Link
+                  key={index}
+                  className={styles.itemContainer}
+                  to={`/product/${product.productCode}`}>
                   <img src={product.img} />
                   <div className={styles.itemName}>{product.productName}</div>
-                  <div className={styles.itemPrice}>{product.buyPrice}</div>
-                  <button className={styles.itemButton}>
-                    <Link to={`/product/${product.productCode}`}>Details</Link>
-                  </button>
-                </div>
+                  <div className={styles.itemPrice}>
+                    {numberFormat.format(product.buyPrice)}
+                    <span> Đ</span>
+                  </div>
+                </Link>
               );
             })
           : []}

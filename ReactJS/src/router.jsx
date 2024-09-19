@@ -6,6 +6,7 @@ import { Routes, Route } from "react-router-dom";
 import ProductPage from "./page/user/ProductPage/ProductPage";
 import ProductInCartPage from "./Component/productInCart/productInCart";
 import ProductDetails from "./page/user/ProductDetailPage/productDetail";
+import SignUpPage from "./page/user/SignupPage/signup";
 const renderRouter = () => {
   const userRouter = [
     {
@@ -27,6 +28,10 @@ const renderRouter = () => {
     {
       path: router.USER.productInCartPage,
       component: <ProductInCartPage />,
+    },
+    {
+      path: router.USER.userSignupPage,
+      component: <SignUpPage />,
     },
   ];
   return (

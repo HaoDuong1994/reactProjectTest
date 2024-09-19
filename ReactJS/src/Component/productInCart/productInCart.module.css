@@ -6,6 +6,7 @@
     background-color: #e2eaf1;
     font-size: 14px;
     font-weight: 700;
+    padding-left: 1%;
     height: 43px;
     display: flex;
     align-items: center;
@@ -16,6 +17,7 @@
     font-size: 14px;
     font-weight: 500;
     height: 43px;
+    padding-left: 1%;
     display: flex;
     align-items: center;
   }
@@ -24,31 +26,52 @@
     border-top: none;
     border-radius: 0px 0px 10px 10px;
     .itemShow {
-      background-color: darkorange;
       height: 150px;
       padding: 2%;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: flex-start;
       img {
         width: 70px;
         height: 70px;
       }
+      .buttonDelete {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 1px solid rgb(204, 204, 204);
+      }
+      .buttonDelete:hover {
+        cursor: pointer;
+      }
       .quantityShow {
+        display: flex;
         input {
           text-align: center;
           width: 50px;
-          border: 2px solid rgb(197, 191, 191);
+          border: 1px solid rgb(197, 191, 191);
         }
         .buttonDecrese {
           width: 20px;
-          border: 2px solid rgb(197, 191, 191);
+          border: 1px solid rgb(197, 191, 191);
           border-radius: 10px 0px 0px 10px;
+          background-color: #e1e1e1;
+        }
+        .buttonDecrese:hover {
+          cursor: pointer;
         }
         .buttonIncrese {
           width: 20px;
-          border: 2px solid rgb(197, 191, 191);
+          border: 1px solid rgb(197, 191, 191);
           border-radius: 0px 10px 10px 0px;
+          background-color: #e1e1e1;
+        }
+        .buttonIncrese {
+          cursor: pointer;
         }
         span {
           margin-left: 10px;
@@ -58,4 +81,44 @@
       }
     }
   }
+  .horizontalLine {
+    border: 1px solid #e4e8ec;
+    margin-top: 20px;
+  }
+  .showTotalPrice {
+    padding: 1%;
+    display: flex;
+    .title {
+      font-weight: 600;
+    }
+    .price {
+      color: red;
+      margin-left: 50%;
+      font-weight: 700;
+    }
+  }
+  .cartOrder {
+    height: 43px;
+    background-color: #e95221;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #e1e1e1;
+    border-style: none;
+    border-radius: 5px;
+  }
+  .cartOrder:hover {
+    background-color: rgb(255, 255, 255);
+    color: #e95221;
+    border: 1px solid #e95221;
+    cursor: pointer;
+  }
+}
+.marginLeft {
+  margin-left: 100px;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

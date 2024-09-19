@@ -11,6 +11,8 @@ function ContentRender(props) {
   const handleDecrease = () => {
     setQuantity(quantity - 1);
   };
+  const numberFormat = new Intl.NumberFormat("en-us");
+
   return (
     <div className={styles.container}>
       <div className={styles.contentWrapper}>
@@ -24,14 +26,24 @@ function ContentRender(props) {
           Type:
           <span className={styles.color}> {data ? data.productType : ""}</span>
         </div>
-        <div className={styles.price}>{data ? data.buyPrice : 0}</div>
-        <div className={styles.quantity}>
-          <div onClick={handleDecrease} className={styles.button}>
-            <span>-</span>
+        <div className={styles.price}>
+          {data ? numberFormat.format(data.buyPrice) : 0}
+          <span> đ</span>
+        </div>
+        <div className={styles.insurrance}>
+          <div>
+            {" "}
+            - Free 2 Badminton Racket Grips: VNB 001, VS002 or Joto 001
           </div>
-          <div className={styles.number}>{quantity}</div>
-          <div onClick={handleIncrease} className={styles.button}>
-            <span>+</span>
+          <div> - Genuine product commitment</div>
+          <div>
+            {" "}
+            - Some products will come with a single bag or velvet bag to protect
+            the racket.
+          </div>
+          <div>
+            - Payment after checking and receiving the goods (Delivery of racket
+            frame)
           </div>
         </div>
         <div className={styles.buttonOrder}>

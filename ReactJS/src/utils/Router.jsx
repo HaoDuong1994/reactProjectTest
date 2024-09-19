@@ -4,6 +4,7 @@ const router = {
     profilePage: "/profile",
     productPage: "/product",
     productInCartPage: "/item-in-cart",
+    userSignupPage: "/user/sign-up",
   },
   ADMIN: {
     homePage: "/",

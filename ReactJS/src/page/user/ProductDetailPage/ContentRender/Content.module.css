@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap");
 .container {
   display: flex;
   width: 70%;
@@ -16,36 +17,10 @@
       font-size: xx-large;
       font-weight: 700;
     }
-    .quantity {
-      display: flex;
-      justify-content: space-between;
-      width: 110px;
-      .button {
-        width: 26px;
-        height: 26px;
-        background-color: chocolate;
-        color: aliceblue;
-        display: flex;
-        justify-content: center;
-        border-radius: 50%;
-        text-align: center;
-        font-size: 20px;
-        span {
-          text-align: center;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-      }
-      .button:hover {
-        cursor: pointer;
-      }
-      .number {
-        color: black;
-        width: 50px;
-        border: 1px solid #111;
-        text-align: center;
-      }
+    .insurrance {
+      width: 85%;
+      padding: 2%;
+      border-style: groove;
     }
     .buttonOrder {
       display: flex;
