@@ -5,6 +5,65 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  .user {
+    color: blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 27px;
+    .dropdown {
+      opacity: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: 0.3 ease-in-out;
+      .triangle {
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid rgb(95, 23, 23);
+      }
+      .userLogout {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: black;
+        background-color: aliceblue;
+        border-radius: 5px;
+        width: 200px;
+        transition: 0.5s ease-in-out;
+        .details {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+        }
+        .checkout {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          transition: 0.3s ease-in-out;
+          text-decoration: none;
+          color: black;
+        }
+        .details:hover {
+          background-color: #e86d39;
+          color: aliceblue;
+          z-index: 1;
+          transition: 0.3s ease-in-out;
+        }
+        .checkout:hover {
+          background-color: #e86d39;
+          color: aliceblue;
+          z-index: 1;
+        }
+      }
+    }
+    .dropdown:hover {
+      opacity: 1;
+      z-index: 1;
+    }
+  }
   .loginMenu {
     font-size: large;
     color: chocolate;
@@ -56,7 +115,9 @@
 }
 .menuPhone {
   display: flex;
+  height: 27px;
   justify-content: center;
+  align-items: center;
   span {
     margin-left: 5px;
     color: red;

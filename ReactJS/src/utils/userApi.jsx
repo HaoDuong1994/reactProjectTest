@@ -12,4 +12,19 @@ const SignUpUser = async (body) => {
     return error.response;
   }
 };
-export { SignUpUser };
+const LoginUser = async (body) => {
+  try {
+    const data = await axios.post("http://localhost:3000/customer/login", body);
+    return data;
+  } catch (error) {
+    return error.response;
+  }
+};
+const getUserId = async (gmail) => {
+  try {
+    const id = await axios.get("");
+  } catch (error) {
+    console.log("error get user id", error);
+  }
+};
+export { SignUpUser, LoginUser };

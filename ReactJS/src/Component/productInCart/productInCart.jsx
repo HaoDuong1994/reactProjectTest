@@ -1,11 +1,15 @@
 import { useContext, useState, useEffect } from "react";
 import { Context } from "../../utils/Context";
 import styles from "./productInCart.module.css";
+import { redirect, useNavigate } from "react-router-dom";
 import { getProductDetail } from "../../utils/getProduct";
 function ProductInCartPage() {
+  const navigate = useNavigate();
   const value = useContext(Context);
+  const gmailUser = value.gmailUser;
   const [productCartList, setProductCartList] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
+  console.log(productCartList);
   const product = value.productInCart;
   const { handleDeleteCart } = value;
   const numberFormat = new Intl.NumberFormat("en-us");
@@ -55,8 +59,14 @@ function ProductInCartPage() {
     }, 0);
     setTotalPrice(priceFinal);
   }, [productCartList]);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!gmailUser) alert("You Should Login");
+    navigate("/user/payment");
+  };
   return (
     <form
+      onSubmit={handleSubmit}
       medthod="GET"
       action="http://localhost:5173/product"
       className={styles.container}>

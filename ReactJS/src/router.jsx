@@ -3,10 +3,12 @@ import HomePage from "./page/user/HomePage/homepage";
 import router from "./utils/Router";
 import ProfilePage from "./page/user/profilePage/profilePage";
 import { Routes, Route } from "react-router-dom";
+import Login from "./page/user/LoginPage/Login";
 import ProductPage from "./page/user/ProductPage/ProductPage";
 import ProductInCartPage from "./Component/productInCart/productInCart";
 import ProductDetails from "./page/user/ProductDetailPage/productDetail";
 import SignUpPage from "./page/user/SignupPage/signup";
+import PaymentPage from "./page/user/PaymentPage/paymentPage";
 const renderRouter = () => {
   const userRouter = [
     {
@@ -32,6 +34,14 @@ const renderRouter = () => {
     {
       path: router.USER.userSignupPage,
       component: <SignUpPage />,
+    },
+    {
+      path: router.USER.loginPage,
+      component: <Login />,
+    },
+    {
+      path: router.USER.paymentPage,
+      component: <PaymentPage />,
     },
   ];
   return (
