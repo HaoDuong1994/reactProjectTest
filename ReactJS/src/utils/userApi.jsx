@@ -22,9 +22,12 @@ const LoginUser = async (body) => {
 };
 const getUserId = async (gmail) => {
   try {
-    const id = await axios.get("");
+    const data = await axios.get(
+      `http://localhost:3000/customer?email=${gmail}`
+    );
+    return data;
   } catch (error) {
     console.log("error get user id", error);
   }
 };
-export { SignUpUser, LoginUser };
+export { SignUpUser, LoginUser, getUserId };

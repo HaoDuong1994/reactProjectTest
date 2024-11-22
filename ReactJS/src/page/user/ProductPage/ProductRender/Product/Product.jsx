@@ -28,6 +28,14 @@ function Product(props) {
             })
           : []}
       </div>
+      {/* Render No Product Found*/}
+      {productList == [] || productList == null ? (
+        <div className={styles.errorFound}>
+          <div>No Result Found</div>
+          <img src="https://static.vecteezy.com/system/resources/previews/007/872/974/non_2x/file-not-found-illustration-with-confused-people-holding-big-magnifier-search-no-result-data-not-found-concept-can-be-used-for-website-landing-page-animation-etc-vector.jpg" />
+          <div></div>
+        </div>
+      ) : null}
       <div className={styles.buttonList}>
         {button.map((item, index) => {
           return (

@@ -22,32 +22,65 @@
       }
     }
     .method {
-      background-color: blueviolet;
       width: 50%;
-      border-left: 1px solid;
-      .inputPayment {
-        input[type="radio"]:after {
-          width: 15px;
-          height: 15px;
-          border-radius: 15px;
-          background-color: #d1d3d1;
-          content: "";
-          display: inline-block;
-          visibility: visible;
-          border: 2px solid white;
+      margin-left: 20px;
+      .inputWrapper {
+        border: 1px solid #b1b1b1;
+        border-radius: 5px;
+        padding: 15px;
+        margin-top: 19px;
+        .inputPayment {
+          display: flex;
+          align-items: center;
+          margin-bottom: 5px;
+          .icon {
+            margin-left: 50px;
+            margin-top: 2px;
+            color: #e95211;
+            font-size: 25px;
+          }
+          .iconBank {
+            margin-left: 48px;
+            margin-top: 2px;
+            color: #e95211;
+            font-size: 20px;
+          }
+          input[type="radio"] {
+            width: 18px;
+            height: 18px;
+            position: relative;
+            border-radius: 30px;
+            background-color: #e95211;
+            content: "";
+            display: inline-block;
+            visibility: visible;
+            border: 2px solid rgb(126, 65, 65);
+          }
+          label {
+            margin-left: 15px;
+          }
+          input[type="radio"]:checked:after {
+            width: 15px;
+            height: 15px;
+            border-radius: 15px;
+            top: -2px;
+            left: -1px;
+            position: relative;
+            background-color: #e95211;
+            display: inline-block;
+            visibility: visible;
+            border: 2px solid white;
+          }
         }
-
-        input[type="radio"]:checked:after {
-          width: 15px;
-          height: 15px;
-          border-radius: 15px;
-          top: -2px;
-          left: -1px;
-          position: relative;
-          background-color: #e95211;
-          display: inline-block;
-          visibility: visible;
-          border: 2px solid white;
+        .contentPayment {
+          margin-top: 20px;
+          display: block;
+          background-color: #eaeaea;
+          color: #737373;
+          width: 80%;
+          p {
+            margin-bottom: 1px;
+          }
         }
       }
     }

@@ -34,7 +34,6 @@ function Login() {
     }
     if (result.status == 200) {
       setErrorLogin(null);
-      console.log(result);
       alert("Login sucess");
       const jwt = result.data.result.token;
       cookie.set("jwt", jwt);

@@ -7,6 +7,8 @@ const router = {
     userSignupPage: "/user/sign-up",
     loginPage: "/user/log-in",
     paymentPage: "/user/payment",
+    orderSucessPage: "/order-confirm",
+    orderedPage: "/user/ordered",
   },
   ADMIN: {
     homePage: "/",

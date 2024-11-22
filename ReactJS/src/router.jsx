@@ -1,6 +1,7 @@
 import MasterLayout from "./page/user/HomePage/masterlayout";
 import HomePage from "./page/user/HomePage/homepage";
 import router from "./utils/Router";
+import Ordered from "./page/user/OrderedPage/Ordered";
 import ProfilePage from "./page/user/profilePage/profilePage";
 import { Routes, Route } from "react-router-dom";
 import Login from "./page/user/LoginPage/Login";
@@ -9,6 +10,7 @@ import ProductInCartPage from "./Component/productInCart/productInCart";
 import ProductDetails from "./page/user/ProductDetailPage/productDetail";
 import SignUpPage from "./page/user/SignupPage/signup";
 import PaymentPage from "./page/user/PaymentPage/paymentPage";
+import OrderSucessPage from "./Component/orderSucessComponent/orderSucess";
 const renderRouter = () => {
   const userRouter = [
     {
@@ -42,6 +44,14 @@ const renderRouter = () => {
     {
       path: router.USER.paymentPage,
       component: <PaymentPage />,
+    },
+    {
+      path: router.USER.orderSucessPage,
+      component: <OrderSucessPage />,
+    },
+    {
+      path: router.USER.orderedPage,
+      component: <Ordered />,
     },
   ];
   return (

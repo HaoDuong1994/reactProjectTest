@@ -1,6 +1,6 @@
 import styles from "../../Header/header.module.css";
 import { Link } from "react-router-dom";
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext, useEffect, memo } from "react";
 import { jwtDecode } from "jwt-decode";
 import { IoPerson } from "react-icons/io5";
 import { AiOutlineFacebook, AiOutlineInstagram } from "react-icons/ai";

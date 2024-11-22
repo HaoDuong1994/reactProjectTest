@@ -6,10 +6,10 @@ import { getProductDetail } from "../../utils/getProduct";
 function ProductInCartPage() {
   const navigate = useNavigate();
   const value = useContext(Context);
+  const { getToTalPrice, getInForProductDetail } = value;
   const gmailUser = value.gmailUser;
   const [productCartList, setProductCartList] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
-  console.log(productCartList);
   const product = value.productInCart;
   const { handleDeleteCart } = value;
   const numberFormat = new Intl.NumberFormat("en-us");
@@ -49,6 +49,7 @@ function ProductInCartPage() {
       });
       const result = await Promise.all(data);
       setProductCartList(result);
+      getInForProductDetail(result);
     };
     getProduct();
   }, [product]);
@@ -58,11 +59,19 @@ function ProductInCartPage() {
       return total + currentValue.buyPrice * currentValue.quantity;
     }, 0);
     setTotalPrice(priceFinal);
+    getToTalPrice(priceFinal);
   }, [productCartList]);
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!gmailUser) alert("You Should Login");
-    navigate("/user/payment");
+    if (!gmailUser) {
+      alert("You Should Login");
+      navigate("/user/log-in");
+    }
+    if (productCartList.length == 0) {
+      alert("Cart can not be Empty");
+    } else {
+      navigate("/user/payment");
+    }
   };
   return (
     <form

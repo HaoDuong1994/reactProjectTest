@@ -1,4 +1,57 @@
 .producrRenderContainer {
   width: 40%;
-  background-color: dimgrey;
+  height: 100vh;
+  .title {
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    font-weight: 600;
+    font-size: larger;
+  }
+  hr {
+    margin: 0px;
+    color: rgb(238, 178, 87);
+  }
+  .productContainer {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    .imgProduct {
+      padding-left: 20px;
+      display: inline-block;
+      margin-top: 15px;
+      img {
+        width: 50px;
+        height: 50px;
+        border: 1px solid #b1b1b1;
+        border-radius: 5px;
+      }
+    }
+    .buyPrice {
+      color: red;
+      font-weight: 700;
+    }
+  }
+  .button {
+    text-align: center;
+    margin-top: 20px;
+    button {
+      width: 70%;
+      border: 1px solid #b1b1b1;
+      border-radius: 5px;
+      background-color: #e95211;
+      color: #fbfafa;
+      height: 40px;
+    }
+    button:hover {
+      background-color: #fbfafa;
+      color: #e95211;
+    }
+  }
+  .notedPayment {
+    p {
+      font-style: italic;
+    }
+  }
 }

@@ -3,6 +3,17 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  .errorFound {
+    color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 20%;
+      height: 20%;
+    }
+  }
   .itemList {
     display: grid;
     height: 80%;

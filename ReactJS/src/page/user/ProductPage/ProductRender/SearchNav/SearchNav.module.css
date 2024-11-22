@@ -14,18 +14,22 @@
     margin-top: 1px;
     .input {
       width: 100%;
+      padding: 2px;
       border: 2px solid #d4d4d4;
     }
   }
   .searchPrice {
     width: 100%;
     margin-top: 20px;
-    p {
-      margin-bottom: 0px;
-    }
-    input {
-      width: 100%;
-      border: 1px solid #d4d4d4;
+    ul {
+      padding: 0px;
+      li {
+        padding: 0px 2px;
+        list-style: none;
+        label {
+          margin-left: 5px;
+        }
+      }
     }
   }
   .productFilter {
@@ -35,6 +39,19 @@
         color: rgb(253, 74, 74);
         cursor: pointer;
       }
+      margin-bottom: 0px;
     }
+  }
+  button {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    background-image: linear-gradient(to right, #f47842, #f4a685);
+    border: none;
+    border-radius: 5px;
+  }
+  button:hover {
+    cursor: pointer;
+    opacity: 0.8;
   }
 }

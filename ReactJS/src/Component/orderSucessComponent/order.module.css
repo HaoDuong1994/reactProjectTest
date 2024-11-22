@@ -1,0 +1,29 @@
+.container {
+  background-color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .icon {
+    color: #e95211;
+    font-size: 50px;
+  }
+  .buttonGroup {
+    display: flex;
+    width: 320px;
+    justify-content: space-around;
+    margin-bottom: 200px;
+    button {
+      width: 150px;
+      border-radius: 10px;
+      border: 0px;
+      background-color: #fb7942;
+      color: rgb(249, 239, 239);
+      height: 30px;
+    }
+    button:hover {
+      opacity: 0.8;
+    }
+  }
+}

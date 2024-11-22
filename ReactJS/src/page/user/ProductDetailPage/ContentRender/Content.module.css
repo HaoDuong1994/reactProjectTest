@@ -27,20 +27,27 @@
       margin-top: 20px;
       .addCard {
         background-color: rgb(243, 178, 14);
-        height: 50px;
+        height: 40px;
+        width: 28%;
         padding-left: 20px;
         padding-right: 20px;
         color: aliceblue;
         border-radius: 20px;
         border: none;
       }
+      .addCard:hover {
+        opacity: 0.8;
+      }
       .buy {
         margin-left: 20px;
+        width: 28%;
         background-color: chocolate;
-        width: 86px;
         color: aliceblue;
         border-radius: 20px;
         border: none;
+      }
+      .buy:hover {
+        opacity: 0.8;
       }
     }
   }
