@@ -8,16 +8,14 @@ import {
   getFilterProduct,
 } from "../../../../utils/getProduct";
 function ProductRender() {
-  const [productSelect, setProductSelect] = useState("racket");
+  const [productSelect, setProductSelect] = useState("all");
   const [page, setPage] = useState("1");
   const [productData, setProductData] = useState();
-  console.log(productData);
   const [valueSearch, setValueSearch] = useState("");
   const [handlePrice, setHandlePrice] = useState("");
   const handleClick = (productType) => {
     setProductSelect(productType);
   };
-
   const handleClickButton = (numberPage) => {
     setPage(numberPage);
   };
@@ -31,7 +29,6 @@ function ProductRender() {
       setProductData(result);
     } else {
       const data = await getSearchProduct(value);
-      console.log(data);
       setProductData(data);
     }
   };

@@ -36,7 +36,6 @@ function GlobalContext({ children }) {
   const getUserInfor = (object) => {
     setOrderInfor(object);
   };
-  console.log(productInCart);
   const getInForProductDetail = (data) => {
     setGetProductDetail(data);
   };

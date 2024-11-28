@@ -66,9 +66,11 @@ function ProductInCartPage() {
     if (!gmailUser) {
       alert("You Should Login");
       navigate("/user/log-in");
+      return;
     }
     if (productCartList.length == 0) {
       alert("Cart can not be Empty");
+      return;
     } else {
       navigate("/user/payment");
     }

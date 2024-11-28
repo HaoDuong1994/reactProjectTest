@@ -9,6 +9,7 @@ const router = {
     paymentPage: "/user/payment",
     orderSucessPage: "/order-confirm",
     orderedPage: "/user/ordered",
+    shopsystem: "/shop-system",
   },
   ADMIN: {
     homePage: "/",

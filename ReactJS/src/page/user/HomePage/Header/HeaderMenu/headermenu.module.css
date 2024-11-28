@@ -6,6 +6,7 @@
     justify-content: space-around;
     align-items: center;
     background-color: #e95211;
+    margin-bottom: 0;
     li {
       list-style: none;
       position: relative;

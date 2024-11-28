@@ -5,8 +5,16 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  .search {
+    a {
+      text-decoration: none;
+      color: #4e4e4e;
+      font-size: large;
+      font-weight: 900;
+    }
+  }
   .user {
-    color: blue;
+    color: rgb(241, 125, 66);
     display: flex;
     flex-direction: column;
     align-items: center;

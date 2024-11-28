@@ -1,6 +1,7 @@
 import axios from "axios";
 const getAllProduct = async (productType, page) => {
   if (productType) {
+    console.log(productType);
     const response = await axios.get(
       `http://localhost:3000/product?productType=${productType}&page=${page}`
     );

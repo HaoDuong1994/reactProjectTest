@@ -1,6 +1,7 @@
 import styles from "../../Header/header.module.css";
 import { Link } from "react-router-dom";
-import { useState, useContext, useEffect, memo } from "react";
+import { useState, useContext, useEffect } from "react";
+import { CiSearch } from "react-icons/ci";
 import { jwtDecode } from "jwt-decode";
 import { IoPerson } from "react-icons/io5";
 import { AiOutlineFacebook, AiOutlineInstagram } from "react-icons/ai";
@@ -64,6 +65,11 @@ function TopHeader(props) {
             <span className={styles.itemCart}>{productCart.length}</span>
           </li>
         </ul>
+      </div>
+      <div className={styles.search}>
+        <Link to={"http://localhost:5173/product"}>
+          <CiSearch />
+        </Link>
       </div>
       {user ? (
         <div className={styles.user}>

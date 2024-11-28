@@ -63,19 +63,6 @@ function HeaderMenu() {
             return (
               <li key={Math.random()}>
                 <Link to={menu.path}>{menu.name}</Link>
-                {menu.childMenu && (
-                  <ul className={styles.menuChild}>
-                    {menu.childMenu.map((childItem) => {
-                      return (
-                        <li key={Math.random()}>
-                          <Link to={childItem.pathChild}>
-                            {childItem.nameChild}
-                          </Link>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                )}
               </li>
             );
           })}

@@ -11,6 +11,7 @@ import ProductDetails from "./page/user/ProductDetailPage/productDetail";
 import SignUpPage from "./page/user/SignupPage/signup";
 import PaymentPage from "./page/user/PaymentPage/paymentPage";
 import OrderSucessPage from "./Component/orderSucessComponent/orderSucess";
+import Shopsystem from "./page/user/ShopSystemPage/shopsystem";
 const renderRouter = () => {
   const userRouter = [
     {
@@ -52,6 +53,10 @@ const renderRouter = () => {
     {
       path: router.USER.orderedPage,
       component: <Ordered />,
+    },
+    {
+      path: router.USER.shopsystem,
+      component: <Shopsystem />,
     },
   ];
   return (
