@@ -10,6 +10,7 @@ const router = {
     orderSucessPage: "/order-confirm",
     orderedPage: "/user/ordered",
     shopsystem: "/shop-system",
+    newsPage: "/badminton-news",
   },
   ADMIN: {
     homePage: "/",

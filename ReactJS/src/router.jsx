@@ -12,6 +12,8 @@ import SignUpPage from "./page/user/SignupPage/signup";
 import PaymentPage from "./page/user/PaymentPage/paymentPage";
 import OrderSucessPage from "./Component/orderSucessComponent/orderSucess";
 import Shopsystem from "./page/user/ShopSystemPage/shopsystem";
+import NewsPage from "./page/user/NewsPage/newsPage";
+import NewsDetail from "./page/user/NewsPage/NewsDetailPage/NewsDetail";
 const renderRouter = () => {
   const userRouter = [
     {
@@ -57,6 +59,14 @@ const renderRouter = () => {
     {
       path: router.USER.shopsystem,
       component: <Shopsystem />,
+    },
+    {
+      path: router.USER.newsPage,
+      component: <NewsPage />,
+    },
+    {
+      path: "/badminton-news/:id",
+      component: <NewsDetail />,
     },
   ];
   return (
