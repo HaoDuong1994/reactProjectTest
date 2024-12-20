@@ -1,6 +1,9 @@
 import MasterLayout from "./page/user/HomePage/masterlayout";
 import HomePage from "./page/user/HomePage/homepage";
+import { useLocation } from "react-router-dom";
 import router from "./utils/Router";
+import ShopRouter from "./page/Shop/ShopRouter/ShopRouter";
+import ShopLayOut from "./page/Shop/ShopMasterLayout/ShopLayOut";
 import Ordered from "./page/user/OrderedPage/Ordered";
 import ProfilePage from "./page/user/profilePage/profilePage";
 import { Routes, Route } from "react-router-dom";
@@ -84,7 +87,27 @@ const renderRouter = () => {
     </MasterLayout>
   );
 };
+const ShopRender = () => {
+  return (
+    <>
+      <ShopLayOut>
+        <Routes>
+          {ShopRouter.map((route) => {
+            return (
+              <Route
+                key={Math.random()}
+                path={route.path}
+                element={route.component}></Route>
+            );
+          })}
+        </Routes>
+      </ShopLayOut>
+    </>
+  );
+};
 const RouterCustom = () => {
-  return renderRouter();
+  const location = useLocation();
+  const isAdminPath = location.pathname.startsWith("/shopUser");
+  return isAdminPath ? ShopRender() : renderRouter();
 };
 export default RouterCustom;

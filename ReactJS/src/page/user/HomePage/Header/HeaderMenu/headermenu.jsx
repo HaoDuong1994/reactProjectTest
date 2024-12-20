@@ -40,7 +40,7 @@ function HeaderMenu() {
     },
     {
       name: "BADMINTON NEWS",
-      path: Router.USER.productPage,
+      path: Router.USER.newsPage,
     },
     {
       name: "POLICY",

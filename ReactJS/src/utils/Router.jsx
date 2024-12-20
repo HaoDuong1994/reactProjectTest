@@ -13,7 +13,7 @@ const router = {
     newsPage: "/badminton-news",
   },
   ADMIN: {
-    homePage: "/",
+    productPage: "/shopUser/product",
   },
 };
 export default router;

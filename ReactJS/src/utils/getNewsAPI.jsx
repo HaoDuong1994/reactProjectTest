@@ -7,4 +7,13 @@ const getNewsApi = async () => {
     console.log(error);
   }
 };
-export { getNewsApi };
+const getNewsDetail = async (id) => {
+  try {
+    console.log(id);
+    const response = await axios.get(`http://localhost:3000/news?newsId=${id}`);
+    return response.data;
+  } catch (error) {
+    console.log("error get news detail", error);
+  }
+};
+export { getNewsApi, getNewsDetail };

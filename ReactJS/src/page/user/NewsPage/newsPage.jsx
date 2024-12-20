@@ -4,8 +4,10 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import moment from "moment";
 function NewsPage() {
+  console.log(1);
   console.log(moment().format());
   const [listNews, setListNews] = useState([]);
+  console.log(listNews);
   useEffect(() => {
     const getNews = async () => {
       const data = await getNewsApi();
