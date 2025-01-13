@@ -12,18 +12,17 @@
       display: block;
       position: relative;
       flex-grow: 3;
-      .title {
-        display: flex;
-        align-items: center;
-        height: 100%;
-      }
-      .productItem {
-        display: none;
+      .listCatogory {
+        display: block;
         position: absolute;
+        padding-left: 10px;
+        li {
+          display: none;
+        }
       }
-    }
-    .productList:hover .productItem {
-      display: block;
+      .listCatogory:hover li {
+        display: block;
+      }
     }
     button {
       flex-grow: 1;

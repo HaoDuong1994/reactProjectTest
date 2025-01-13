@@ -1,6 +1,5 @@
 import styles from "./Login.module.css";
 import { Link } from "react-router-dom";
-import { Context } from "../../../utils/Context";
 import { useState, useEffect, useContext } from "react";
 import { LoginUser } from "../../../utils/userApi";
 import { useNavigate } from "react-router-dom";

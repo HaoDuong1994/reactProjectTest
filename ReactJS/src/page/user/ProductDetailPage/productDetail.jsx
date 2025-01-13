@@ -14,6 +14,7 @@ function ProductDetails() {
     };
     getProduct();
   }, [id]);
+  console.log(product);
   return (
     <div className={styles.container}>
       <ImgRender data={product} />

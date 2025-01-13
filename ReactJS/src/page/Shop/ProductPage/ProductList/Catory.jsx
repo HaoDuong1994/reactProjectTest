@@ -5,14 +5,14 @@ function Category() {
       <div className={styles.wrapper}>
         <input placeholder="Search for product" type="text" />
         <div className={styles.productList}>
-          <p className={styles.title}>All Catogory</p>
-          <div className={styles.productItem}>
-            <div>Racket</div>
-            <div>Racket</div>
-            <div>Racket</div>
-            <div>Racket</div>
-            <div>Racket</div>
-          </div>
+          <ul className={styles.listCatogory}>
+            Catogory
+            <li>Racket</li>
+            <li>Racket</li>
+            <li>Racket</li>
+            <li>Racket</li>
+            <li>Racket</li>
+          </ul>
         </div>
         <button>Search</button>
       </div>

@@ -2,12 +2,18 @@ import styles from "./Img.module.css";
 import { useState, useEffect } from "react";
 function ImgRender(props) {
   const { data } = props;
+  console.log(">>>>> data img >>>>>>>.", data);
   const mainImg = data ? data.img : "";
+  const [showImg, setShowImg] = useState(mainImg);
   useEffect(() => {
     setShowImg(mainImg);
   }, [mainImg]);
-  let imgStorage = data ? data.imgStorage : [];
-  const [showImg, setShowImg] = useState(mainImg);
+  // let imgStorage = data ? data.imgStorage : [];
+  // const [showImg, setShowImg] = useState(mainImg);
+  // const handleShowImg = (url) => {
+  //   setShowImg(url);
+  // };
+  let imgDetails = data ? data.imgDetail : [];
   const handleShowImg = (url) => {
     setShowImg(url);
   };
@@ -23,14 +29,14 @@ function ImgRender(props) {
           }}
           src={data ? data.img : ""}
         />
-        {imgStorage.map((img, index) => {
+        {imgDetails.map((img, index) => {
           return (
             <img
               onClick={() => {
-                handleShowImg(img.src);
+                handleShowImg(img.url);
               }}
               key={index}
-              src={img ? img.src : ""}
+              src={img ? img.url : ""}
             />
           );
         })}
