@@ -7,11 +7,13 @@ import { getProductDetail } from "../../../../utils/getProduct";
 import { createOrder, createOrderDetail } from "../../../../utils/orderApi";
 function ProductRender(props) {
   const value = useContext(Context);
-  const handleDeleteCart = value.handleDeleteCart;
-  const { getUserInfor } = value;
+  const handleDeleteCartPayment = value.handleDeleteCartPayment;
+  const { getUserInfor, totalPriceInCart } = value;
   const navigate = useNavigate();
   const productID = props.data.productIncart;
+  console.log(productID);
   const [productPayment, setProductPayment] = useState([]);
+  const [productIdMongo, setProductIdMongo] = useState([]);
   const numberFormat = new Intl.NumberFormat("en-us");
   const { userInfor, productIncart, userId } = props.data;
   useEffect(() => {
@@ -21,42 +23,56 @@ function ProductRender(props) {
         return data.data;
       });
       const result = await Promise.all(product);
+      const idProduct = result.map((product) => {
+        return product._id;
+      });
       setProductPayment(result);
+      setProductIdMongo(idProduct);
     };
     getProductDetails();
   }, []);
   const handleOrder = async () => {
-    const body = { ...userInfor, idUser: userId };
+    const body = {
+      ...userInfor,
+      idUser: userId,
+      totalPrice: totalPriceInCart,
+      products: productIdMongo,
+    };
     getUserInfor(body);
     //Create Order
     let order = await createOrder(body);
-    order.data.card = body.card;
-    order.data.cash = body.cash;
-    order.data.productDetail = productPayment;
+    // console.log(order);
+    // order.data.card = body.card;
+    // order.data.cash = body.cash;
+    // order.data.productDetail = productPayment;
     //Create Order Details
+    // if (order.status == 200) {
+    //   const bodyOrderDetail = order.data;
+    //   const data = bodyOrderDetail.productDetail.map(async (product) => {
+    //     product.idUser = bodyOrderDetail.idUser;
+    //     product.idOrder = bodyOrderDetail.idOrder;
+    //     if (bodyOrderDetail.card) {
+    //       product.card = true;
+    //     } else {
+    //       product.card = false;
+    //     }
+    //     const data = await createOrderDetail(product);
+    //     return data;
+    //   });
+    //   const result = await Promise.all(data);
+    //   if (result[0].status != 200) {
+    //     alert("Order create fail");
+    //   } else {
+    //     for (let i = 0; i < result.length; i++) {
+    //       const idProduct = result[i].data.data.productCode;
+    //       handleDeleteCart(idProduct);
+    //     }
+    //     navigate("/order-confirm");
+    //   }
+    // }
     if (order.status == 200) {
-      const bodyOrderDetail = order.data;
-      const data = bodyOrderDetail.productDetail.map(async (product) => {
-        product.idUser = bodyOrderDetail.idUser;
-        product.idOrder = bodyOrderDetail.idOrder;
-        if (bodyOrderDetail.card) {
-          product.card = true;
-        } else {
-          product.card = false;
-        }
-        const data = await createOrderDetail(product);
-        return data;
-      });
-      const result = await Promise.all(data);
-      if (result[0].status != 200) {
-        alert("Order create fail");
-      } else {
-        for (let i = 0; i < result.length; i++) {
-          const idProduct = result[i].data.data.productCode;
-          handleDeleteCart(idProduct);
-        }
-        navigate("/order-confirm");
-      }
+      navigate("/order-confirm");
+      await handleDeleteCartPayment();
     }
   };
   return (

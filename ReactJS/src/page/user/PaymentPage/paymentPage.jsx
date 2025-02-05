@@ -19,7 +19,7 @@ function PaymentPage() {
   useEffect(() => {
     const fetchData = async () => {
       const data = await getUserId(gmailUser);
-      setUserId(data.data.data[0].personID);
+      setUserId(data.data.data._id);
     };
     if (gmailUser) {
       fetchData();

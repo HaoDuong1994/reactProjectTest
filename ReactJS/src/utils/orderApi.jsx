@@ -1,7 +1,7 @@
 import axios from "axios";
 const createOrder = async (body) => {
   const response = await axios.post(
-    "http://localhost:3000/orders/create",
+    "http://localhost:3000/orders/create-order",
     body
   );
   console.log(response);

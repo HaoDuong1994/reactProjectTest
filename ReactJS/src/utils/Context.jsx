@@ -2,6 +2,7 @@ import { createContext, useState } from "react";
 const Context = createContext();
 function GlobalContext({ children }) {
   const [productInCart, setProductInCart] = useState([]);
+  console.log(productInCart);
   const [totalPriceInCart, setToTalPriceInCart] = useState(0);
   const [gmailUser, setGmailUser] = useState(null);
   const [getOrderInfor, setOrderInfor] = useState({
@@ -20,8 +21,13 @@ function GlobalContext({ children }) {
     const index = productInCart.findIndex((item) => {
       return item === idCart;
     });
+    console.log(index);
     productInCart.splice(index, 1);
     setProductInCart([...productInCart]);
+  };
+  const handleDeleteCartPayment = async () => {
+    console.log("hellooooooooo delete ");
+    setProductInCart([]);
   };
   const handleUser = (gmail) => {
     if (gmail) {
@@ -51,6 +57,7 @@ function GlobalContext({ children }) {
     getOrderInfor,
     getProductDetail,
     getInForProductDetail,
+    handleDeleteCartPayment,
   };
   return <Context.Provider value={objectValue}>{children}</Context.Provider>;
 }
