@@ -1,0 +1,43 @@
+.container {
+  width: 100%;
+  /* thead {
+    tr {
+      display: flex;
+      justify-content: space-around;
+    }
+  } */
+  /* tbody {
+    tr {
+      display: flex;
+      justify-content: space-around;
+      td {
+        img {
+          width: 50px;
+          height: 50px;
+        }
+        button {
+          width: 40px;
+          height: 30px;
+          border-radius: 5px;
+        }
+      }
+    }
+  } */
+}
+.container thead th,
+.container tbody td {
+  text-align: center; /* Canh giữa nội dung */
+  padding: 10px;
+  border: 1px solid #ccc; /* Thêm viền cho dễ thấy */
+}
+.container tbody td img {
+  width: 30px;
+  height: 30px;
+}
+.container tbody td button {
+  width: 60px;
+  height: 30px;
+  border-radius: 10px;
+  border: none;
+  background-color: chocolate;
+}

@@ -21,12 +21,10 @@ function GlobalContext({ children }) {
     const index = productInCart.findIndex((item) => {
       return item === idCart;
     });
-    console.log(index);
     productInCart.splice(index, 1);
     setProductInCart([...productInCart]);
   };
   const handleDeleteCartPayment = async () => {
-    console.log("hellooooooooo delete ");
     setProductInCart([]);
   };
   const handleUser = (gmail) => {
