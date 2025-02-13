@@ -34,10 +34,19 @@
   width: 30px;
   height: 30px;
 }
-.container tbody td button {
-  width: 60px;
-  height: 30px;
+.container tbody td a {
+  display: inline-block;
+  width: 40px;
+  height: 20px;
   border-radius: 10px;
   border: none;
   background-color: chocolate;
+  text-decoration: none;
+  color: black;
+  text-align: center;
+  line-height: 20px;
+}
+.container tbody td a:hover {
+  cursor: pointer;
+  color: white;
 }

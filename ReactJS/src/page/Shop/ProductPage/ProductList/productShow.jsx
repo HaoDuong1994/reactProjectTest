@@ -1,6 +1,6 @@
 import styles from "./productShow.module.css";
+import { Link } from "react-router-dom";
 function ProductShow(props) {
-  console.log(props);
   const productList = props.data.data;
   console.log(productList);
   return (
@@ -16,22 +16,26 @@ function ProductShow(props) {
         </tr>
       </thead>
       <tbody>
-        {productList.map((product, index) => {
-          return (
-            <tr>
-              <td>{index + 1}</td>
-              <td>{product.productName}</td>
-              <td>{product.productCode}</td>
-              <td>
-                <img src={product.img} />
-              </td>
-              <td>{product.buyPrice}</td>
-              <td>
-                <button>Edit</button>
-              </td>
-            </tr>
-          );
-        })}
+        {productList
+          ? productList.map((product, index) => {
+              return (
+                <tr>
+                  <td>{index + 1}</td>
+                  <td>{product.productName}</td>
+                  <td>{product.productCode}</td>
+                  <td>
+                    <img src={product.img} />
+                  </td>
+                  <td>{product.buyPrice}</td>
+                  <td>
+                    <Link to={`/shopUser/product/${product.productCode}`}>
+                      Edit
+                    </Link>
+                  </td>
+                </tr>
+              );
+            })
+          : null}
       </tbody>
     </table>
   );

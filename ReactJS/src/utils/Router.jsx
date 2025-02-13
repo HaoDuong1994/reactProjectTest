@@ -14,6 +14,7 @@ const router = {
   },
   ADMIN: {
     productPage: "/shopUser/product",
+    productDetail: "/shopUser/product/:id",
   },
 };
 export default router;
