@@ -2,7 +2,6 @@ import { createContext, useState } from "react";
 const Context = createContext();
 function GlobalContext({ children }) {
   const [productInCart, setProductInCart] = useState([]);
-  console.log(productInCart);
   const [totalPriceInCart, setToTalPriceInCart] = useState(0);
   const [gmailUser, setGmailUser] = useState(null);
   const [getOrderInfor, setOrderInfor] = useState({
@@ -13,6 +12,13 @@ function GlobalContext({ children }) {
     cash: false,
   });
   const [getProductDetail, setGetProductDetail] = useState([]);
+  const [editProduct, setEditProduct] = useState({
+    productName: "",
+    productCode: "",
+    buyPrice: "",
+    description: "",
+    productType: "racket",
+  });
   const handleCart = (idCart) => {
     alert("Check your cart");
     setProductInCart([...productInCart, idCart]);
@@ -56,6 +62,8 @@ function GlobalContext({ children }) {
     getProductDetail,
     getInForProductDetail,
     handleDeleteCartPayment,
+    editProduct,
+    setEditProduct,
   };
   return <Context.Provider value={objectValue}>{children}</Context.Provider>;
 }

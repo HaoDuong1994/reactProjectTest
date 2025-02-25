@@ -36,5 +36,12 @@ const getFilterProduct = async (value, filterPrice) => {
     console.log("errror >>>>", error);
   }
 };
+const updateProduct = async (object) => {
+  const response = await axios.put(
+    "http://localhost:3000/product/update-v2",
+    object
+  );
+  console.log(response);
+};
 export default getAllProduct;
-export { getProductDetail, getSearchProduct, getFilterProduct };
+export { getProductDetail, getSearchProduct, getFilterProduct, updateProduct };
